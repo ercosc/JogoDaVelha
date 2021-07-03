@@ -55,7 +55,21 @@ namespace JogoDaVelha.controller
             if ((marcacoes[0, 0] == x && marcacoes[0, 1] == x && marcacoes[0, 2] == x) || (marcacoes[1, 0] == x && marcacoes[1, 1] == x && marcacoes[1, 2] == x) || (marcacoes[2, 0] == x && marcacoes[2, 1] == x && marcacoes[2, 2] == x) || (marcacoes[0, 0] == x && marcacoes[1, 0] == x && marcacoes[2, 0] == x) || (marcacoes[1, 0] == x && marcacoes[1, 1] == x && marcacoes[1, 2] == x) || (marcacoes[2, 0] == x && marcacoes[0, 1] == x && marcacoes[0, 2] == x) || (marcacoes[0, 0] == x && marcacoes[1, 1] == x && marcacoes[2, 2] == x) || (marcacoes[0, 2] == x && marcacoes[1, 1] == x && marcacoes[2, 0] == x))
             {
                 MsgDeVitoria(x);
+            } else if(!string.IsNullOrEmpty(marcacoes[0, 0]) && !string.IsNullOrEmpty(marcacoes[0, 1]) && !string.IsNullOrEmpty(marcacoes[0, 2]) && !string.IsNullOrEmpty(marcacoes[1, 0]) && !string.IsNullOrEmpty(marcacoes[1, 1]) && !string.IsNullOrEmpty(marcacoes[1, 2]) && !string.IsNullOrEmpty(marcacoes[2, 0]) && !string.IsNullOrEmpty(marcacoes[2, 1]) && !string.IsNullOrEmpty(marcacoes[2, 2]))
+            {
+                MsgDeEmpate();
             }
+        }
+
+        private void MsgDeEmpate()
+        {
+            Console.WriteLine($"Deu velha!!!");
+            Console.WriteLine("Iniciando novo jogo...");
+            Console.WriteLine(".");
+            Console.WriteLine(".");
+            Console.WriteLine(".");
+            marcacoes = new string[3, 3];
+            xoro = false;
         }
 
         private void MsgDeVitoria(string x)
